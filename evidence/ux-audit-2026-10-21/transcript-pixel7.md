@@ -1,0 +1,47 @@
+# Transcript 389T7U
+
+Started 2026-10-21 16:13:56 UTC. Direction: both.
+
+**2026-10-21 16:13:58 UTC** EN: Hello, nice to meet you.
+
+> ZH: 你好，很高兴认识你。
+
+**2026-10-21 16:13:59 UTC** ZH: 火车站在前面。
+
+> EN: The train station is just ahead.
+
+**2026-10-21 16:14:00 UTC** EN: Thank you very much.
+
+> ZH: 非常感谢。
+
+**2026-10-21 16:14:00 UTC** ZH: 谢谢。
+
+> EN: Thank you.
+
+**2026-10-21 16:14:00 UTC** ZH (guest): 不客气。
+
+> EN: You're welcome.
+
+**2026-10-21 16:14:00 UTC** EN (guest): Goodbye.
+
+> ZH: 再见。
+
+**2026-10-21 16:14:00 UTC** ZH: 你好。
+
+> EN: Hello.
+
+**2026-10-21 16:14:04 UTC** EN: Offline line one
+
+> ZH: [zh] Offline line one
+
+**2026-10-21 16:14:08 UTC** EN: Network back line two
+
+> ZH: [zh] Network back line two
+
+**2026-10-21 16:14:08 UTC** EN: Goodbye.
+
+> ZH: 再见。
+
+**2026-10-21 16:14:08 UTC** ZH (guest): 再见。
+
+> EN: Goodbye.

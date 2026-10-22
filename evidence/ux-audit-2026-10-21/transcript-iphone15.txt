@@ -1,0 +1,32 @@
+Transcript VEAUDZ
+Started 2026-10-21 16:08:16 UTC. Direction: both.
+
+[2026-10-21 16:08:18 UTC] EN: Hello, nice to meet you.
+    ZH: 你好，很高兴认识你。
+
+[2026-10-21 16:08:25 UTC] EN: Thank you very much.
+    ZH: 非常感谢。
+
+[2026-10-21 16:08:25 UTC] ZH: 谢谢。
+    EN: Thank you.
+
+[2026-10-21 16:08:25 UTC] ZH (guest): 不客气。
+    EN: You're welcome.
+
+[2026-10-21 16:08:25 UTC] EN (guest): Goodbye.
+    ZH: 再见。
+
+[2026-10-21 16:08:25 UTC] ZH: 你好。
+    EN: Hello.
+
+[2026-10-21 16:08:29 UTC] EN: Offline line one
+    ZH: [zh] Offline line one
+
+[2026-10-21 16:08:33 UTC] EN: Network back line two
+    ZH: [zh] Network back line two
+
+[2026-10-21 16:08:33 UTC] EN: Goodbye.
+    ZH: 再见。
+
+[2026-10-21 16:08:33 UTC] ZH (guest): 再见。
+    EN: Goodbye.

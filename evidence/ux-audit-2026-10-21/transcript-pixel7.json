@@ -1,0 +1,117 @@
+{
+  "code": "389T7U",
+  "direction": "both",
+  "createdAt": "2026-10-21T16:13:56.932Z",
+  "segments": [
+    {
+      "id": 1,
+      "lang": "en",
+      "text": "Hello, nice to meet you.",
+      "translation": "你好，很高兴认识你。",
+      "final": true,
+      "ts": 1792599238220,
+      "speaker": "host",
+      "clientId": "ad74a3a7c28112ffbde56529c2946820"
+    },
+    {
+      "id": 2,
+      "lang": "zh",
+      "text": "火车站在前面。",
+      "translation": "The train station is just ahead.",
+      "final": true,
+      "ts": 1792599239621,
+      "speaker": "host",
+      "clientId": "46744b663ae99f0f6ec40b10f5645690"
+    },
+    {
+      "id": 3,
+      "lang": "en",
+      "text": "Thank you very much.",
+      "translation": "非常感谢。",
+      "final": true,
+      "ts": 1792599240072,
+      "speaker": "host",
+      "clientId": "04cf99908583c73a4896b05e1031e1a7"
+    },
+    {
+      "id": 4,
+      "lang": "zh",
+      "text": "谢谢。",
+      "translation": "Thank you.",
+      "final": true,
+      "ts": 1792599240505,
+      "speaker": "host",
+      "clientId": "51a76a8e733976e16f9c5dd8d034782a"
+    },
+    {
+      "id": 5,
+      "lang": "zh",
+      "text": "不客气。",
+      "translation": "You're welcome.",
+      "final": true,
+      "ts": 1792599240641,
+      "speaker": "guest",
+      "clientId": "f5140d09b8cc8484f9bfac1be64882bf"
+    },
+    {
+      "id": 6,
+      "lang": "en",
+      "text": "Goodbye.",
+      "translation": "再见。",
+      "final": true,
+      "ts": 1792599240753,
+      "speaker": "guest",
+      "clientId": "17d65b818711b9f235c4af227b62564d"
+    },
+    {
+      "id": 7,
+      "lang": "zh",
+      "text": "你好。",
+      "translation": "Hello.",
+      "final": true,
+      "ts": 1792599240819,
+      "speaker": "host",
+      "clientId": "500ae96b64eb2a3293156a5419dbc863"
+    },
+    {
+      "id": 8,
+      "lang": "en",
+      "text": "Offline line one",
+      "translation": "[zh] Offline line one",
+      "final": true,
+      "ts": 1792599244069,
+      "speaker": "host",
+      "clientId": "3fbfd606f3ad4dc8949b652040cccc1a"
+    },
+    {
+      "id": 9,
+      "lang": "en",
+      "text": "Network back line two",
+      "translation": "[zh] Network back line two",
+      "final": true,
+      "ts": 1792599248138,
+      "speaker": "host",
+      "clientId": "f16f864d062fe11170645646c70acb46"
+    },
+    {
+      "id": 10,
+      "lang": "en",
+      "text": "Goodbye.",
+      "translation": "再见。",
+      "final": true,
+      "ts": 1792599248214,
+      "speaker": "host",
+      "clientId": "b4257fa2e02b6c02da707bdfc8b1361a"
+    },
+    {
+      "id": 11,
+      "lang": "zh",
+      "text": "再见。",
+      "translation": "Goodbye.",
+      "final": true,
+      "ts": 1792599248220,
+      "speaker": "guest",
+      "clientId": "22bf0507838103448e333084f62e4caf"
+    }
+  ]
+}

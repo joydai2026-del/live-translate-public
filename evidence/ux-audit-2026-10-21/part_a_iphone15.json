@@ -1,0 +1,192 @@
+{
+ "results": [
+  {
+   "n": 1,
+   "function": "Home page, first visit",
+   "devices": "desktop",
+   "did": "Opened /",
+   "saw": "Three direction cards, 3 steps, provider: the offline test dictionary (mock)",
+   "verdict": "CHECK",
+   "shot": "evidence/ux-audit-2026-10-21/01-home-desktop.png"
+  },
+  {
+   "n": 2,
+   "function": "Create room (both ways)",
+   "devices": "desktop",
+   "did": "Clicked Both ways",
+   "saw": "Host page, code VEAUDZ, link http://192.168.1.50:5551/j/VEAUDZ",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/02-create-room-desktop.png"
+  },
+  {
+   "n": 3,
+   "function": "QR code + join link",
+   "devices": "desktop",
+   "did": "Fetched qr.svg and the link text",
+   "saw": "svg 6005 bytes; link http://192.168.1.50:5551/j/VEAUDZ",
+   "verdict": "CHECK",
+   "shot": ""
+  },
+  {
+   "n": 4,
+   "function": "Copy link",
+   "devices": "desktop",
+   "did": "Clicked Copy link",
+   "saw": "button said \"Copied\", clipboard \"http://192.168.1.50:5551/j/VEAUDZ\"",
+   "verdict": "WORKS",
+   "shot": ""
+  },
+  {
+   "n": 5,
+   "function": "Guest joins from the link/QR URL; host reader count",
+   "devices": "iphone15 + desktop",
+   "did": "Phone opened http://192.168.1.50:5551/j/VEAUDZ",
+   "saw": "Guest waiting screen; host readers = 1 (reader connected)",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/05-guest-joins-by-link-iphone15.png ; evidence/ux-audit-2026-10-21/05-host-sees-reader-desktop.png"
+  },
+  {
+   "n": 6,
+   "function": "Host types English, guest reads Chinese",
+   "devices": "desktop + iphone15",
+   "did": "Typed \"Hello, nice to meet you.\" + Enter",
+   "saw": "guest big text \"Hello, nice to meet you.\" after 2 ms; host input cleared: True",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/06-host-types-en-guest-iphone15.png ; evidence/ux-audit-2026-10-21/06-host-types-en-desktop.png"
+  },
+  {
+   "n": 7,
+   "function": "Host hold-to-talk (fake mic + fake recognizer), Chinese",
+   "devices": "desktop + iphone15",
+   "did": "Held \"Partner speaks Chinese\", recognizer gave 火车站在前面。, released",
+   "saw": "recognizer lang None; guest saw live card False; final English on guest after None ms",
+   "verdict": "BROKEN",
+   "shot": "evidence/ux-audit-2026-10-21/07-ptt-interim-guest-iphone15.png ; evidence/ux-audit-2026-10-21/07-ptt-final-guest-iphone15.png ; evidence/ux-audit-2026-10-21/07-ptt-final-desktop.png"
+  },
+  {
+   "n": 8,
+   "function": "Continuous mic + language toggle",
+   "devices": "desktop + iphone15",
+   "did": "Tapped mic, said English, switched to 中文, said Chinese, tapped mic off",
+   "saw": "recognizer langs en-US then zh-CN; status while on \"Hearing Chinese. Tap the mic to pause.\"; guest got both: True",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/08-mic-continuous-desktop.png ; evidence/ux-audit-2026-10-21/08-mic-continuous-guest-iphone15.png"
+  },
+  {
+   "n": 9,
+   "function": "Guest types reply (Chinese), host reads English with Guest tag",
+   "devices": "iphone15 + desktop",
+   "did": "Typed 不客气。 + Enter on phone",
+   "saw": "host got translation after 1 ms; Guest tag shown: True; guest box cleared: True",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/09-guest-reply-host-desktop.png ; evidence/ux-audit-2026-10-21/09-guest-reply-iphone15.png"
+  },
+  {
+   "n": 10,
+   "function": "Guest types reply (English) in a both-ways room",
+   "devices": "iphone15 + desktop",
+   "did": "Typed Goodbye.",
+   "saw": "host saw 再见。 after 2 ms",
+   "verdict": "WORKS",
+   "shot": ""
+  },
+  {
+   "n": 11,
+   "function": "Read aloud (speech stubbed, calls logged)",
+   "devices": "iphone15",
+   "did": "Tapped Read aloud (guest reads English), host sent 你好。",
+   "saw": "aria-pressed true; speak calls [{'text': 'Hello.', 'lang': 'en-US'}]",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/11-read-aloud-on-iphone15.png"
+  },
+  {
+   "n": 12,
+   "function": "Text size A+ / A-",
+   "devices": "iphone15",
+   "did": "A+ x3, then A- to the minimum",
+   "saw": "big text 30.4px -> 53.2px; min 25.84px, A- disabled at min: True",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/12-font-bigger-iphone15.png"
+  },
+  {
+   "n": 13,
+   "function": "Big text language toggle (both-ways room)",
+   "devices": "iphone15",
+   "did": "Tapped \"Big text\" button",
+   "saw": "visible True; first card big text \"Hello, nice to meet you.\" -> \"你好，很高兴认识你。\"",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/13-big-text-toggle-iphone15.png"
+  },
+  {
+   "n": 14,
+   "function": "Guest refreshes the page",
+   "devices": "iphone15",
+   "did": "Reloaded the guest page",
+   "saw": "lines 6 -> 6; host readers 1",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/14-guest-refresh-iphone15.png"
+  },
+  {
+   "n": 15,
+   "function": "Guest loses network, host speaks meanwhile, guest comes back",
+   "devices": "iphone15",
+   "did": "set_offline(True) 1.5 s, host sent \"Offline line one\", set_offline(False)",
+   "saw": "offline status \"实时 Live\"; missed line arrived after 2 ms; status \"实时 Live\"",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/15-guest-offline-iphone15.png ; evidence/ux-audit-2026-10-21/15-guest-back-online-iphone15.png"
+  },
+  {
+   "n": 16,
+   "function": "Host loses network while sending, then recovers",
+   "devices": "desktop + iphone15",
+   "did": "Offline, typed \"Network back line two\", back online",
+   "saw": "offline status \"Connection is slow. Retrying 1 line...\"; guest got the line after 2029 ms; status after \"Hold a button while you speak, or tap the mic to keep listening.\"",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/16-host-offline-desktop.png ; evidence/ux-audit-2026-10-21/16-host-back-online-desktop.png"
+  },
+  {
+   "n": 17,
+   "function": "Both type at the same moment",
+   "devices": "desktop + iphone15",
+   "did": "Both pressed Enter together",
+   "saw": "host lines 10, guest lines 10 (should match)",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/17-both-at-once-desktop.png ; evidence/ux-audit-2026-10-21/17-both-at-once-iphone15.png"
+  },
+  {
+   "n": 18,
+   "function": "Download transcript (Markdown, Text, JSON)",
+   "devices": "desktop",
+   "did": "Clicked each link",
+   "saw": "{'md': ('transcript-VEAUDZ.md', 800), 'txt': ('transcript-VEAUDZ.txt', 787), 'json': ('transcript-VEAUDZ.json', 2567)}; md has guest line: True",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/transcript-iphone15.md"
+  },
+  {
+   "n": 19,
+   "function": "Host ends the room",
+   "devices": "desktop + iphone15",
+   "did": "End room, then End room and delete",
+   "saw": "guest ended screen after 3 ms; reply disabled True; host: \"Room ended. The transcript was deleted from the server and the listener sees that the room ended.\"",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/19-end-confirm-desktop.png ; evidence/ux-audit-2026-10-21/19-room-ended-iphone15.png ; evidence/ux-audit-2026-10-21/19-room-ended-desktop.png"
+  }
+ ],
+ "console": [
+  {
+   "page": "host-desktop",
+   "type": "error",
+   "text": "Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+  },
+  {
+   "page": "host-desktop",
+   "type": "error",
+   "text": "Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+  },
+  {
+   "page": "host-desktop",
+   "type": "error",
+   "text": "Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+  }
+ ]
+}

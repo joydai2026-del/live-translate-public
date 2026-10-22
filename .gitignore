@@ -1,0 +1,19 @@
+.cc-*.log
+node_modules/
+.review-*.log
+.tw-*.log
+.research.log
+.twg.log
+.slow.log
+.qa.log
+.env
+.dev.vars
+*.log
+.wrangler/
+.demo.log
+evidence/fail*.png
+evidence/grill-fail-*.png
+evidence/qa-*-fail-*.png
+# Local secrets: never commit. Only the fake-value example is tracked.
+.env*
+!.env.example

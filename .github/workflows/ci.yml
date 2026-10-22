@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 13 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      # Browsers for the playwright version pinned in package-lock.json (chromium for the
+      # browser tests, webkit for checks/qa_heavy.mjs).
+      - run: npx playwright install --with-deps chromium webkit
+      # Fast suite (node:test). No network: every test uses the mock translator.
+      # The 127.0.0.2 per-IP limit tests need the full 127/8 loopback, which Linux has.
+      - run: npm test
+      # Browser end-to-end scripts from checks/slow.sh. slow.sh itself also calls
+      # ../common_check.mjs, a file from the original build harness that is not in this
+      # repo (see BLOCKERS.md), so CI runs the three E2E scripts directly.
+      - run: npm run test:e2e
+
+  gitleaks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install gitleaks (official release, checksum verified)
+        env:
+          GITLEAKS_VERSION: 8.30.1
+          GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
+        run: |
+          curl -sSfL -o gitleaks.tar.gz "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          echo "${GITLEAKS_SHA256}  gitleaks.tar.gz" | sha256sum -c -
+          tar -xzf gitleaks.tar.gz gitleaks
+          sudo mv gitleaks /usr/local/bin/gitleaks
+      - run: gitleaks git --redact --verbose .

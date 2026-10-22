@@ -1,0 +1,29 @@
+# INERT hosting config. Nothing reads this file until someone creates a Render Blueprint
+# and points it at deploy/render.yaml by hand. It is not at the repo root on purpose, and
+# autoDeploy is off, so pushes and merges never deploy.
+#
+# Why Render and not GitHub Pages or Cloudflare Pages: this app is a Node server that keeps
+# rooms in memory and streams lines with Server-Sent Events. Static hosts cannot run it.
+# It needs exactly one long-running instance (rooms live in that process's memory).
+services:
+  - type: web
+    name: live-translate
+    runtime: node
+    plan: free            # free instances sleep when idle; a sleeping instance loses its rooms
+    autoDeploy: false
+    buildCommand: npm ci --omit=dev
+    startCommand: node src/server.js
+    healthCheckPath: /api/config
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: TRUST_PROXY
+        value: "1"        # Render terminates TLS in front of the app
+      - key: TRANSLATOR
+        value: mymemory
+      - key: PUBLIC_URL
+        sync: false       # set to the https URL Render gives the service
+      - key: TRANSLATE_DAILY_CHAR_LIMIT
+        value: "100000"   # cap translator spend on a public instance
+      - key: DEEPL_API_KEY
+        sync: false       # optional; set in the Render dashboard, never in git

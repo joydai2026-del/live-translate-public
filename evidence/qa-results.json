@@ -1,0 +1,816 @@
+{
+  "when": "2026-10-20T20:43:23.276Z",
+  "profiles": {
+    "iphone15": "devices['iPhone 15'] on webkit",
+    "pixel7": "devices['Pixel 7'] on chromium",
+    "desktop": "desktop chromium 1280x800",
+    "c375": "chromium 375x667 touch",
+    "w375": "webkit 375x667 touch"
+  },
+  "results": [
+    {
+      "id": "A1",
+      "section": "A",
+      "profile": "iphone15",
+      "name": "start room, join by code, speak (ptt en+zh, typed, test hook), guest reply, read aloud, download, End room",
+      "severity": "high",
+      "ms": 6504,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "A2",
+      "section": "A",
+      "profile": "iphone15",
+      "name": "refresh mid-flow (guest and host) keeps lines, tokens and the live stream",
+      "severity": "high",
+      "ms": 2165,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "A3",
+      "section": "A",
+      "profile": "iphone15",
+      "name": "back and forward on host and guest keep the live stream working",
+      "severity": "high",
+      "ms": 2381,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "A1",
+      "section": "A",
+      "profile": "pixel7",
+      "name": "start room, join by code, speak (ptt en+zh, typed, test hook), guest reply, read aloud, download, End room",
+      "severity": "high",
+      "ms": 3450,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "A2",
+      "section": "A",
+      "profile": "pixel7",
+      "name": "refresh mid-flow (guest and host) keeps lines, tokens and the live stream",
+      "severity": "high",
+      "ms": 814,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "A3",
+      "section": "A",
+      "profile": "pixel7",
+      "name": "back and forward on host and guest keep the live stream working",
+      "severity": "high",
+      "ms": 882,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "A1",
+      "section": "A",
+      "profile": "desktop",
+      "name": "start room, join by code, speak (ptt en+zh, typed, test hook), guest reply, read aloud, download, End room",
+      "severity": "high",
+      "ms": 2276,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "A2",
+      "section": "A",
+      "profile": "desktop",
+      "name": "refresh mid-flow (guest and host) keeps lines, tokens and the live stream",
+      "severity": "high",
+      "ms": 609,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "A3",
+      "section": "A",
+      "profile": "desktop",
+      "name": "back and forward on host and guest keep the live stream working",
+      "severity": "high",
+      "ms": 670,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "B1",
+      "section": "B",
+      "profile": "pixel7",
+      "name": "web app manifest is linked and valid",
+      "severity": "low",
+      "ms": 102,
+      "status": "na",
+      "detail": "NA: no <link rel=manifest> on any page; the app is not a PWA (not required by CLAUDE.md)"
+    },
+    {
+      "id": "B2",
+      "section": "B",
+      "profile": "pixel7",
+      "name": "service worker registers and the app shell loads offline",
+      "severity": "low",
+      "ms": 1558,
+      "status": "na",
+      "detail": "NA: no service worker registered (0 registrations); offline reload shows the browser error page"
+    },
+    {
+      "id": "B3",
+      "section": "B",
+      "profile": "pixel7",
+      "name": "guest offline mid-session: shows reconnecting, catches up when back online",
+      "severity": "medium",
+      "ms": 1850,
+      "status": "pass",
+      "detail": "pass (note: the established SSE stream survived setOffline, so the reconnecting state was not exercised)"
+    },
+    {
+      "id": "B4",
+      "section": "B",
+      "profile": "pixel7",
+      "name": "host offline: typed line is kept, retried and arrives once",
+      "severity": "medium",
+      "ms": 1627,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "B1",
+      "section": "B",
+      "profile": "iphone15",
+      "name": "web app manifest is linked and valid",
+      "severity": "low",
+      "ms": 648,
+      "status": "na",
+      "detail": "NA: no <link rel=manifest> on any page; the app is not a PWA (not required by CLAUDE.md)"
+    },
+    {
+      "id": "B2",
+      "section": "B",
+      "profile": "iphone15",
+      "name": "service worker registers and the app shell loads offline",
+      "severity": "low",
+      "ms": 1826,
+      "status": "na",
+      "detail": "NA: no service worker registered (0 registrations); offline reload shows the browser error page"
+    },
+    {
+      "id": "B3",
+      "section": "B",
+      "profile": "iphone15",
+      "name": "guest offline mid-session: shows reconnecting, catches up when back online",
+      "severity": "medium",
+      "ms": 2329,
+      "status": "pass",
+      "detail": "pass (note: the established SSE stream survived setOffline, so the reconnecting state was not exercised)"
+    },
+    {
+      "id": "B4",
+      "section": "B",
+      "profile": "iphone15",
+      "name": "host offline: typed line is kept, retried and arrives once",
+      "severity": "medium",
+      "ms": 4045,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "B1",
+      "section": "B",
+      "profile": "desktop",
+      "name": "web app manifest is linked and valid",
+      "severity": "low",
+      "ms": 145,
+      "status": "na",
+      "detail": "NA: no <link rel=manifest> on any page; the app is not a PWA (not required by CLAUDE.md)"
+    },
+    {
+      "id": "B2",
+      "section": "B",
+      "profile": "desktop",
+      "name": "service worker registers and the app shell loads offline",
+      "severity": "low",
+      "ms": 1566,
+      "status": "na",
+      "detail": "NA: no service worker registered (0 registrations); offline reload shows the browser error page"
+    },
+    {
+      "id": "B3",
+      "section": "B",
+      "profile": "desktop",
+      "name": "guest offline mid-session: shows reconnecting, catches up when back online",
+      "severity": "medium",
+      "ms": 1705,
+      "status": "pass",
+      "detail": "pass (note: the established SSE stream survived setOffline, so the reconnecting state was not exercised)"
+    },
+    {
+      "id": "B4",
+      "section": "B",
+      "profile": "desktop",
+      "name": "host offline: typed line is kept, retried and arrives once",
+      "severity": "medium",
+      "ms": 1637,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "C1",
+      "section": "C",
+      "profile": "api",
+      "name": "API rejects bad input and missing/invalid params with the right 4xx",
+      "severity": "high",
+      "ms": 63,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "C1b",
+      "section": "C",
+      "profile": "api",
+      "name": "a body over 64 KB (text far over 2000 chars) gets an HTTP 413 answer, not a connection reset",
+      "severity": "low",
+      "ms": 10,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "C2",
+      "section": "C",
+      "profile": "desktop",
+      "name": "join page: empty, short, unknown, pasted, server 500, 429 and offline",
+      "severity": "medium",
+      "ms": 612,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "C3",
+      "section": "C",
+      "profile": "desktop",
+      "name": "home: start fails with 500, 429, offline; button recovers; double click starts one room",
+      "severity": "medium",
+      "ms": 808,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "C4",
+      "section": "C",
+      "profile": "desktop",
+      "name": "double submit on host Send and guest reply stores one line each",
+      "severity": "medium",
+      "ms": 1076,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "C3",
+      "section": "C",
+      "profile": "iphone15",
+      "name": "home: start fails with 500, 429, offline; button recovers; double click starts one room",
+      "severity": "medium",
+      "ms": 1444,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "C4",
+      "section": "C",
+      "profile": "iphone15",
+      "name": "double submit on host Send and guest reply stores one line each",
+      "severity": "medium",
+      "ms": 2071,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "C5",
+      "section": "C",
+      "profile": "desktop",
+      "name": "translator failures: error line, quota banner, slow provider pending then translated",
+      "severity": "high",
+      "ms": 1914,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "C6",
+      "section": "C",
+      "profile": "desktop",
+      "name": "server 5xx on POST segments and on the event stream: retried, recovers, no duplicates",
+      "severity": "high",
+      "ms": 7765,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "C7",
+      "section": "C",
+      "profile": "desktop",
+      "name": "missing/invalid page params: unknown room host+guest, host without token, lowercase link, bad code",
+      "severity": "medium",
+      "ms": 632,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "C8",
+      "section": "C",
+      "profile": "desktop",
+      "name": "hostile and oversized text: rendered as text, capped at 2000 chars, no layout break",
+      "severity": "high",
+      "ms": 227,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "D1",
+      "section": "D",
+      "profile": "iphone15",
+      "name": "every visible button, link and input has an accessible name",
+      "severity": "medium",
+      "ms": 3138,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "D1",
+      "section": "D",
+      "profile": "pixel7",
+      "name": "every visible button, link and input has an accessible name",
+      "severity": "medium",
+      "ms": 799,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "D1",
+      "section": "D",
+      "profile": "desktop",
+      "name": "every visible button, link and input has an accessible name",
+      "severity": "medium",
+      "ms": 770,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "D2",
+      "section": "D",
+      "profile": "iphone15",
+      "name": "main controls are at least 44x44 CSS px",
+      "severity": "low",
+      "ms": 2957,
+      "status": "pass",
+      "detail": "pass (secondary controls under 44 px, info only: host: [data-test=copy] 90x35, host: [data-test=end-room] 79x35, host: [data-test=reset-guests] 98x35, host: [data-test=download-md] 73x22, host: [data-test=download-txt] 29x22, host: [data-test=download-json] 37x22)"
+    },
+    {
+      "id": "D2",
+      "section": "D",
+      "profile": "pixel7",
+      "name": "main controls are at least 44x44 CSS px",
+      "severity": "low",
+      "ms": 677,
+      "status": "pass",
+      "detail": "pass (secondary controls under 44 px, info only: host: [data-test=copy] 92x35, host: [data-test=end-room] 81x35, host: [data-test=reset-guests] 105x35, host: [data-test=download-md] 75x22, host: [data-test=download-txt] 31x22, host: [data-test=download-json] 41x22)"
+    },
+    {
+      "id": "D2",
+      "section": "D",
+      "profile": "c375",
+      "name": "main controls are at least 44x44 CSS px",
+      "severity": "low",
+      "ms": 781,
+      "status": "pass",
+      "detail": "pass (secondary controls under 44 px, info only: host: [data-test=copy] 92x35, host: [data-test=end-room] 81x35, host: [data-test=reset-guests] 105x35, host: [data-test=download-md] 75x22, host: [data-test=download-txt] 31x22, host: [data-test=download-json] 41x22)"
+    },
+    {
+      "id": "D3",
+      "section": "D",
+      "profile": "c375",
+      "name": "no horizontal scroll at 375 px on all pages (long text, max font, ended state)",
+      "severity": "medium",
+      "ms": 1557,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "D3",
+      "section": "D",
+      "profile": "w375",
+      "name": "no horizontal scroll at 375 px on all pages (long text, max font, ended state)",
+      "severity": "medium",
+      "ms": 3719,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "D3",
+      "section": "D",
+      "profile": "pixel7",
+      "name": "no horizontal scroll at 412 px on all pages (long text, max font, ended state)",
+      "severity": "medium",
+      "ms": 2110,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "D3",
+      "section": "D",
+      "profile": "iphone15",
+      "name": "no horizontal scroll at 393 px on all pages (long text, max font, ended state)",
+      "severity": "medium",
+      "ms": 6760,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "D4",
+      "section": "D",
+      "profile": "desktop",
+      "name": "pages declare lang, have a title and one h1 or a labelled main heading; status regions are live",
+      "severity": "low",
+      "ms": 893,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "E1",
+      "section": "E",
+      "profile": "iphone15",
+      "name": "no console errors or uncaught exceptions on the main pages (home, join, host, guest)",
+      "severity": "medium",
+      "ms": 0,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "E1",
+      "section": "E",
+      "profile": "pixel7",
+      "name": "no console errors or uncaught exceptions on the main pages (home, join, host, guest)",
+      "severity": "medium",
+      "ms": 0,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "E1",
+      "section": "E",
+      "profile": "desktop",
+      "name": "no console errors or uncaught exceptions on the main pages (home, join, host, guest)",
+      "severity": "medium",
+      "ms": 0,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "E1",
+      "section": "E",
+      "profile": "c375",
+      "name": "no console errors or uncaught exceptions on the main pages (home, join, host, guest)",
+      "severity": "medium",
+      "ms": 0,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "E1",
+      "section": "E",
+      "profile": "w375",
+      "name": "no console errors or uncaught exceptions on the main pages (home, join, host, guest)",
+      "severity": "medium",
+      "ms": 0,
+      "status": "pass",
+      "detail": ""
+    },
+    {
+      "id": "E2",
+      "section": "E",
+      "profile": "all",
+      "name": "no uncaught page exceptions in any scenario, error paths included",
+      "severity": "high",
+      "ms": 0,
+      "status": "pass",
+      "detail": ""
+    }
+  ],
+  "console": [
+    {
+      "profile": "pixel7",
+      "scenario": "B1",
+      "noisy": false,
+      "url": "http://127.0.0.1:36731/j/ABCDEF",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "profile": "pixel7",
+      "scenario": "B1",
+      "noisy": false,
+      "url": "http://127.0.0.1:36731/j/ABCDEF",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "profile": "pixel7",
+      "scenario": "B1",
+      "noisy": false,
+      "url": "http://127.0.0.1:36731/j/ABCDEF",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "profile": "pixel7",
+      "scenario": "B1",
+      "noisy": false,
+      "url": "http://127.0.0.1:36731/j/ABCDEF",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "profile": "pixel7",
+      "scenario": "B4",
+      "noisy": true,
+      "url": "http://127.0.0.1:37157/host/6WYLW9",
+      "kind": "console",
+      "text": "Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+    },
+    {
+      "profile": "pixel7",
+      "scenario": "B4",
+      "noisy": true,
+      "url": "http://127.0.0.1:37157/host/6WYLW9",
+      "kind": "console",
+      "text": "Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+    },
+    {
+      "profile": "iphone15",
+      "scenario": "B1",
+      "noisy": false,
+      "url": "http://127.0.0.1:40011/j/ABCDEF",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "profile": "iphone15",
+      "scenario": "B1",
+      "noisy": false,
+      "url": "http://127.0.0.1:40011/j/ABCDEF",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "profile": "iphone15",
+      "scenario": "B1",
+      "noisy": false,
+      "url": "http://127.0.0.1:40011/j/ABCDEF",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "profile": "iphone15",
+      "scenario": "B4",
+      "noisy": true,
+      "url": "http://127.0.0.1:37993/host/J733PK",
+      "kind": "console",
+      "text": "Failed to load resource: WebKit encountered an internal error"
+    },
+    {
+      "profile": "iphone15",
+      "scenario": "B4",
+      "noisy": true,
+      "url": "http://127.0.0.1:37993/host/J733PK",
+      "kind": "console",
+      "text": "Failed to load resource: WebKit encountered an internal error"
+    },
+    {
+      "profile": "iphone15",
+      "scenario": "B4",
+      "noisy": true,
+      "url": "http://127.0.0.1:37993/host/J733PK",
+      "kind": "console",
+      "text": "Failed to load resource: WebKit encountered an internal error"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "B1",
+      "noisy": false,
+      "url": "http://127.0.0.1:39711/j/ABCDEF",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "B1",
+      "noisy": false,
+      "url": "http://127.0.0.1:39711/j/ABCDEF",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "B1",
+      "noisy": false,
+      "url": "http://127.0.0.1:39711/j/ABCDEF",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "B1",
+      "noisy": false,
+      "url": "http://127.0.0.1:39711/j/ABCDEF",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "B4",
+      "noisy": true,
+      "url": "http://127.0.0.1:35843/host/BGWYL5",
+      "kind": "console",
+      "text": "Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "B4",
+      "noisy": true,
+      "url": "http://127.0.0.1:35843/host/BGWYL5",
+      "kind": "console",
+      "text": "Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "C2",
+      "noisy": true,
+      "url": "http://127.0.0.1:40111/join",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "C2",
+      "noisy": true,
+      "url": "http://127.0.0.1:40111/join",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "C2",
+      "noisy": true,
+      "url": "http://127.0.0.1:40111/join",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "C2",
+      "noisy": true,
+      "url": "http://127.0.0.1:40111/join",
+      "kind": "console",
+      "text": "Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "C3",
+      "noisy": true,
+      "url": "http://127.0.0.1:43497/",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "C3",
+      "noisy": true,
+      "url": "http://127.0.0.1:43497/",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "C3",
+      "noisy": true,
+      "url": "http://127.0.0.1:43497/",
+      "kind": "console",
+      "text": "Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+    },
+    {
+      "profile": "iphone15",
+      "scenario": "C3",
+      "noisy": true,
+      "url": "http://127.0.0.1:40411/",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "profile": "iphone15",
+      "scenario": "C3",
+      "noisy": true,
+      "url": "http://127.0.0.1:40411/",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "C6",
+      "noisy": true,
+      "url": "http://127.0.0.1:33019/host/6PFGAC",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 503 (Service Unavailable)"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "C6",
+      "noisy": true,
+      "url": "http://127.0.0.1:33019/host/6PFGAC",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 503 (Service Unavailable)"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "C6",
+      "noisy": true,
+      "url": "http://127.0.0.1:33019/j/6PFGAC",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "C6",
+      "noisy": true,
+      "url": "http://127.0.0.1:33019/j/6PFGAC",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "C7",
+      "noisy": true,
+      "url": "http://127.0.0.1:44713/host/ZZZZZZ",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "C7",
+      "noisy": true,
+      "url": "http://127.0.0.1:44713/host/ZZZZZZ",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "C7",
+      "noisy": true,
+      "url": "http://127.0.0.1:44713/j/ZZZZZZ",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "C7",
+      "noisy": true,
+      "url": "http://127.0.0.1:44713/j/ZZZZZZ",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "C7",
+      "noisy": true,
+      "url": "http://127.0.0.1:44713/j/ZZZZZZ",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "C7",
+      "noisy": true,
+      "url": "http://127.0.0.1:44713/j/ZZZZZZ",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "C7",
+      "noisy": true,
+      "url": "http://127.0.0.1:44713/j/AB",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "profile": "desktop",
+      "scenario": "C7",
+      "noisy": true,
+      "url": "http://127.0.0.1:44713/nowhere",
+      "kind": "console",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    }
+  ]
+}

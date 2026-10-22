@@ -1,0 +1,88 @@
+{
+ "results": [
+  {
+   "n": 50,
+   "function": "Guest network really drops (TCP cut) 6.5 s, host talks, guest replies, network returns",
+   "devices": "pixel7 + desktop",
+   "did": "Guest via a local proxy; cut every connection; host sent a line; guest replied; restored",
+   "saw": "status after 1 s \"正在重新连接 Reconnecting\", after 5 s \"正在重新连接 Reconnecting\"; missed line shown while down: False; reply status while down \"网络不稳，正在重试... / Connection is slow. Retrying...\"; after restore missed line in 1430 ms, guest reply on host in 2 ms; status \"实时 Live\"; lines guest 3 / host 3",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/50-real-drop-offline-pixel7.png ; evidence/ux-audit-2026-10-21/50-real-drop-recovered-pixel7.png ; evidence/ux-audit-2026-10-21/50-real-drop-host-desktop.png"
+  },
+  {
+   "n": 48,
+   "function": "Guest hold-to-talk over the plain-http LAN link",
+   "devices": "pixel7",
+   "did": "Opened http://192.168.1.50:5551/j/L4CPXY",
+   "saw": "talk button visible False (README says https only; typing still works)",
+   "verdict": "WORKS",
+   "shot": ""
+  },
+  {
+   "n": 49,
+   "function": "Room full: guest tries to reply when all 20 reply keys are taken",
+   "devices": "iphone15",
+   "did": "API took keys (statuses [201, 429]), a new guest typed a reply",
+   "saw": "reply status after 4 s: \"网络不稳，正在重试... / Connection is slow. Retrying...\"; can still read: 3 lines",
+   "verdict": "CHECK",
+   "shot": "evidence/ux-audit-2026-10-21/49-full-room-guest-iphone15.png"
+  }
+ ],
+ "console": [
+  {
+   "page": "guest-pixel7-proxy",
+   "type": "error",
+   "text": "Failed to load resource: net::ERR_INCOMPLETE_CHUNKED_ENCODING"
+  },
+  {
+   "page": "guest-pixel7-proxy",
+   "type": "error",
+   "text": "Failed to load resource: net::ERR_EMPTY_RESPONSE"
+  },
+  {
+   "page": "guest-pixel7-proxy",
+   "type": "error",
+   "text": "Failed to load resource: net::ERR_CONNECTION_RESET"
+  },
+  {
+   "page": "guest-pixel7-proxy",
+   "type": "error",
+   "text": "Failed to load resource: net::ERR_CONNECTION_RESET"
+  },
+  {
+   "page": "guest-pixel7-proxy",
+   "type": "error",
+   "text": "Failed to load resource: net::ERR_CONNECTION_RESET"
+  },
+  {
+   "page": "guest-pixel7-proxy",
+   "type": "error",
+   "text": "Failed to load resource: net::ERR_SOCKET_NOT_CONNECTED"
+  },
+  {
+   "page": "guest-21st",
+   "type": "error",
+   "text": "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+  },
+  {
+   "page": "guest-21st",
+   "type": "error",
+   "text": "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+  },
+  {
+   "page": "guest-21st",
+   "type": "error",
+   "text": "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+  },
+  {
+   "page": "guest-21st",
+   "type": "error",
+   "text": "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+  },
+  {
+   "page": "guest-21st",
+   "type": "error",
+   "text": "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+  }
+ ]
+}

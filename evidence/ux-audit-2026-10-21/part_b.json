@@ -1,0 +1,195 @@
+{
+ "results": [
+  {
+   "n": 30,
+   "function": "Keyboard only: Tab to a direction card, Enter",
+   "devices": "desktop",
+   "did": "Tab x N, Enter",
+   "saw": "focus outline \"solid 3px\"; room RFJGN7 created",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/30-keyboard-focus-home-desktop.png"
+  },
+  {
+   "n": 31,
+   "function": "Join by typing the code on /join (phone)",
+   "devices": "iphone15",
+   "did": "Home > Join with a code, typed \"rfj-gn7\", Enter",
+   "saw": "input cleaned to \"RFJGN7\", opened http://localhost:5551/j/RFJGN7",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/31-home-iphone15.png ; evidence/ux-audit-2026-10-21/31-join-typed-iphone15.png"
+  },
+  {
+   "n": 32,
+   "function": "Wrong or short room code on /join",
+   "devices": "pixel7",
+   "did": "Typed ABC, then ZZZZZZ",
+   "saw": "\"房间码是六位字符。 / The code is six characters long.\" / \"找不到这个房间，请向对方确认房间码。 / No room with that code. Check it with the speaker.\"",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/32-wrong-code-pixel7.png"
+  },
+  {
+   "n": 33,
+   "function": "Opening a link to a room that does not exist / expired",
+   "devices": "pixel7",
+   "did": "Opened /j/ZZZZZZ",
+   "saw": "status \"房间已结束 Room ended\", heading \"房间已结束 / This room has ended\"",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/33-unknown-room-link-pixel7.png"
+  },
+  {
+   "n": 34,
+   "function": "Host page for an expired room",
+   "devices": "desktop",
+   "did": "Opened /host/ZZZZZZ",
+   "saw": "status \"This room has expired. Start a new room.\"",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/34-host-unknown-room-desktop.png"
+  },
+  {
+   "n": 35,
+   "function": "A second guest (third person) joins and reads",
+   "devices": "desktop + iphone15 + pixel7",
+   "did": "Pixel 7 opened the same link",
+   "saw": "host readers 2; both guests got the Chinese: True",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/35-two-guests-iphone15.png ; evidence/ux-audit-2026-10-21/35-two-guests-pixel7.png ; evidence/ux-audit-2026-10-21/35-two-guests-host-desktop.png"
+  },
+  {
+   "n": 36,
+   "function": "Guest reply in an English-to-Chinese room; the other guest sees it",
+   "devices": "iphone15 + desktop + pixel7",
+   "did": "placeholder \"输入回复 Type a reply\", typed 谢谢。",
+   "saw": "host got \"Thank you.\" after 2 ms; other guest sees reply: True",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/36-other-guest-sees-reply-pixel7.png"
+  },
+  {
+   "n": 37,
+   "function": "Empty / spaces-only message",
+   "devices": "desktop + iphone15",
+   "did": "Pressed Enter on blank inputs",
+   "saw": "lines 2 -> 2 (nothing sent, no error shown)",
+   "verdict": "WORKS",
+   "shot": ""
+  },
+  {
+   "n": 38,
+   "function": "Long message (2500 chars), unbroken URL, emoji + mixed language",
+   "devices": "desktop + iphone15",
+   "did": "Pasted 2500 chars; 220-char URL; guest typed 好的 OK 👍🏽 谢谢",
+   "saw": "input kept 2000 chars (maxlength 2000, silently cut); guest got it True; emoji reached host True: \"ZH | Guest | 对方 | 12:11 PM |  | 好的 OK 👍🏽 谢谢 |  | [en] 好的 OK 👍🏽 谢谢\"; horizontal overflow px iphone 0, pixel 0",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/38-long-emoji-iphone15.png ; evidence/ux-audit-2026-10-21/38-long-emoji-host-desktop.png"
+  },
+  {
+   "n": 39,
+   "function": "Tap targets (>= 44 px) and horizontal overflow on phones",
+   "devices": "iphone15 + pixel7",
+   "did": "Measured every visible button/link/input",
+   "saw": "guest small: []; join small: [{'t': 'live translate', 'w': 119, 'h': 26}, {'t': 'Start a room', 'w': 86, 'h': 18}]; home small: [{'t': 'live translate', 'w': 119, 'h': 26}, {'t': 'Join with a code', 'w': 113, 'h': 18}, {'t': 'Join their room', 'w': 114, 'h': 20}]; overflow join 0, home 0",
+   "verdict": "CHECK",
+   "shot": ""
+  },
+  {
+   "n": 40,
+   "function": "Phone keyboard covering the reply box",
+   "devices": "iphone15",
+   "did": "Inspected the reply bar",
+   "saw": "reply bar is fixed bottom=0px; a real on-screen keyboard cannot be emulated",
+   "verdict": "NOT TESTABLE",
+   "shot": ""
+  },
+  {
+   "n": 41,
+   "function": "Host page opened in another browser (no host key)",
+   "devices": "desktop",
+   "did": "Opened /host/RFJGN7 in a fresh context",
+   "saw": "\"This browser did not create this room, so it cannot send speech. Open the room on the device that started it, or start a new room.\"; type box disabled True",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/41-host-link-other-browser-desktop.png"
+  },
+  {
+   "n": 42,
+   "function": "Host refreshes the page and keeps talking",
+   "devices": "desktop + iphone15",
+   "did": "Reloaded host tab, typed a line",
+   "saw": "lines kept 6; guest got new line after 2 ms",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/42-host-after-refresh-desktop.png"
+  },
+  {
+   "n": 43,
+   "function": "Reset guests, then a guest replies again",
+   "devices": "desktop + iphone15",
+   "did": "Reset guests (confirm OK), guest typed 再见。",
+   "saw": "status \"Guests reset.\"; reply still delivered after 58 ms",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/43-reset-guests-desktop.png"
+  },
+  {
+   "n": 44,
+   "function": "Guest offline 5 s while host speaks, then back",
+   "devices": "pixel7 + desktop",
+   "did": "set_offline(True) 5 s, host typed a line, set_offline(False)",
+   "saw": "line visible while offline: True; status offline \"实时 Live\"; arrived 1 ms after reconnect; status \"实时 Live\"",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/44-guest-offline-5s-pixel7.png ; evidence/ux-audit-2026-10-21/44-guest-back-online-pixel7.png"
+  },
+  {
+   "n": 45,
+   "function": "Guest sends a reply while offline",
+   "devices": "iphone15 + desktop",
+   "did": "Offline, typed a reply, back online",
+   "saw": "status \"网络不稳，正在重试... / Connection is slow. Retrying...\"; host got it 1485 ms after reconnect; box cleared True",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/45-guest-reply-offline-iphone15.png"
+  }
+ ],
+ "console": [
+  {
+   "page": "guest-pixel7",
+   "type": "error",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  },
+  {
+   "page": "guest-pixel7",
+   "type": "error",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  },
+  {
+   "page": "guest-pixel7",
+   "type": "error",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  },
+  {
+   "page": "guest-pixel7",
+   "type": "error",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  },
+  {
+   "page": "guest-pixel7",
+   "type": "error",
+   "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  },
+  {
+   "page": "guest-iphone15",
+   "type": "error",
+   "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+  },
+  {
+   "page": "guest-iphone15",
+   "type": "error",
+   "text": "Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+  },
+  {
+   "page": "guest-iphone15",
+   "type": "error",
+   "text": "Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+  },
+  {
+   "page": "guest-iphone15",
+   "type": "error",
+   "text": "Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+  }
+ ]
+}

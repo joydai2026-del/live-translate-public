@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5f3ee">
+<title>Host: live-translate</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body data-page="host">
+<header class="top">
+  <a class="wordmark" href="/"><span class="dot" aria-hidden="true"></span>live translate</a>
+  <nav><a href="/">New room</a></nav>
+</header>
+<main class="wrap host">
+  <div class="banner" data-test="translate-banner" role="status" hidden>
+    <p data-test="banner-text"></p>
+    <button class="btn small" data-test="banner-close" type="button">Dismiss</button>
+  </div>
+  <div class="host-grid">
+    <section class="card share" aria-labelledby="share-h">
+      <h2 id="share-h" class="card-h">Share with the listener</h2>
+      <p class="code-label">Room code</p>
+      <p class="room-code" data-test="room-code" aria-live="off"></p>
+      <div class="qr-wrap"><div data-test="qr" class="qr"></div></div>
+      <p class="join-url"><a data-test="join-url" target="_blank" rel="noopener"></a><button class="btn small" data-test="copy" type="button">Copy link</button></p>
+      <p class="muted small">They can scan the QR with their camera, or open the link and type the code.</p>
+      <p class="hint" data-test="network-hint" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0M5.5 12.5a10 10 0 0 1 13 0M9 16a5 5 0 0 1 6 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="19.5" r="1.5" fill="currentColor"/></svg><span>Both devices need to be on the same Wi-Fi. If the link does not open on their phone (hotel and guest Wi-Fi often block this), turn on a phone hotspot and join both devices to it.</span></p>
+      <p class="notice" data-test="localhost-warning" hidden>Phones cannot open localhost, and no network address was found. Join a Wi-Fi network or a phone hotspot and restart the server, or set PUBLIC_URL to an https tunnel. See README.md.</p>
+      <p class="presence" data-test="presence"><b class="count" data-test="readers">0</b> <span data-test="readers-label">No one is reading yet</span></p>
+      <div class="reset-zone">
+        <button class="btn small quiet" data-test="reset-guests" type="button">Reset guests</button>
+        <p class="muted small" data-test="reset-guests-status" role="status"></p>
+      </div>
+      <div class="end-zone" data-test="end-zone">
+        <button class="btn small quiet" data-test="end-room" type="button">End room</button>
+        <div class="end-confirm" data-test="end-confirm" hidden>
+          <p>End the room for everyone? The listener's screen stops updating and the transcript is deleted from the server. Download it first if you need it.</p>
+          <div class="row">
+            <button class="btn small danger" data-test="end-room-confirm" type="button">End room and delete</button>
+            <button class="btn small" data-test="end-room-cancel" type="button">Cancel</button>
+          </div>
+        </div>
+        <p class="err" data-test="end-error" role="alert"></p>
+      </div>
+    </section>
+    <section class="card speak" aria-labelledby="speak-h">
+      <h2 id="speak-h" class="card-h">Speak</h2>
+      <div class="ptt-row" data-test="ptt-row">
+        <button class="ptt" data-test="ptt-en" type="button" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a4 4 0 0 0 4-4V6a4 4 0 0 0-8 0v5a4 4 0 0 0 4 4z" fill="currentColor"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M8 21h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span class="ptt-main">I speak English</span>
+          <span class="ptt-sub">Hold to talk</span>
+        </button>
+        <button class="ptt zh" data-test="ptt-zh" type="button" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a4 4 0 0 0 4-4V6a4 4 0 0 0-8 0v5a4 4 0 0 0 4 4z" fill="currentColor"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M8 21h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span class="ptt-main"><span lang="zh-CN">对方说中文</span></span>
+          <span class="ptt-sub">Partner speaks Chinese</span>
+        </button>
+      </div>
+      <p class="status" data-test="status" role="status" aria-live="polite">Hold a button while you speak, or tap the mic to keep listening.</p>
+      <div class="continuous">
+        <button class="mic" data-test="mic" type="button" aria-pressed="false" aria-label="Start listening">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a4 4 0 0 0 4-4V6a4 4 0 0 0-8 0v5a4 4 0 0 0 4 4z" fill="currentColor"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4M8 21h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <div class="mic-text">
+          <p class="mic-label" data-test="mic-label">Keep listening</p>
+          <div class="seg-ctrl" role="group" aria-label="Language you are speaking">
+            <button class="seg" data-test="lang-en" type="button" aria-pressed="true">English</button>
+            <button class="seg" data-test="lang-zh" type="button" aria-pressed="false" lang="zh-CN">中文</button>
+          </div>
+        </div>
+      </div>
+      <div class="notice" data-test="nospeech" hidden>
+        <b>Speech recognition is not available in this browser.</b> Open this page in Chrome, Edge or Safari on this device, or type what you want to say below.
+      </div>
+      <form class="typeform" data-test="type-form">
+        <label class="small-label" for="type-input">Or type what you want to say</label>
+        <div class="row">
+          <input id="type-input" data-test="type-input" maxlength="2000" autocomplete="off" placeholder="Type a sentence and press Enter" enterkeyhint="send">
+          <button class="btn" type="submit">Send</button>
+        </div>
+      </form>
+    </section>
+  </div>
+  <section class="card transcript" aria-labelledby="tr-h">
+    <div class="card-head">
+      <h2 id="tr-h" class="card-h">Transcript</h2>
+      <p class="downloads">Download <a data-test="download-md" download>Markdown</a> <a data-test="download-txt" download>Text</a> <a data-test="download-json" download>JSON</a></p>
+    </div>
+    <ol class="segs host-segs" data-test="segments"></ol>
+    <p class="sr-only" data-test="announce" aria-live="polite"></p>
+    <p class="empty" data-test="empty">Nothing yet. Hold a button while you speak, or tap the mic to keep listening. Both languages will appear here.</p>
+  </section>
+</main>
+<footer class="foot">
+  <p>Translation by <b data-test="provider">...</b>.</p>
+  <p data-test="device-note" hidden>Translated on this device (Chrome's built-in translator). Lines translated on this device are not sent to a translation service.</p>
+  <p>Privacy: Chrome and Edge send the speaker's audio to Google or Microsoft for speech recognition, and Safari may send it to Apple; this server never receives audio. The recognized text, and every reply the guest types or speaks, is sent to this server and to the translation provider named above, and stored the same way. Anyone with the room code can read along. Only the device that started the room can download the transcript. Rooms are kept in memory only and are deleted after 12 hours idle or when the server restarts. Download your transcript before you leave.</p>
+</footer>
+<script type="module" src="/app.js"></script>
+</body>
+</html>

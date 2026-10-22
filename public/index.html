@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5f3ee">
+<title>live-translate: start a room</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body data-page="home">
+<header class="top">
+  <a class="wordmark" href="/"><span class="dot" aria-hidden="true"></span>live translate</a>
+  <nav><a href="/join">Join with a code</a></nav>
+</header>
+<main class="wrap home">
+  <section class="hero">
+    <p class="eyebrow">Live interpreting between two phones</p>
+    <h1>Speak here. They read it there.</h1>
+    <p class="lede">Start a room on this device, then hand the code or QR to the other person. What you say appears on their screen, translated, a moment later. You can download the whole conversation as a bilingual transcript.</p>
+  </section>
+  <section class="choices" aria-labelledby="dir-h">
+    <h2 id="dir-h">Which way are you translating?</h2>
+    <div class="choice-grid">
+      <button class="choice" data-test="start-en-zh" data-dir="en-zh" type="button">
+        <span class="choice-lang"><span>EN</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span lang="zh-CN">中文</span></span>
+        <span class="choice-title">English to Chinese</span>
+        <span class="choice-sub">I speak English. They read Simplified Chinese.</span>
+      </button>
+      <button class="choice" data-test="start-zh-en" data-dir="zh-en" type="button">
+        <span class="choice-lang"><span lang="zh-CN">中文</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>EN</span></span>
+        <span class="choice-title">Chinese to English</span>
+        <span class="choice-sub" lang="zh-CN">我说中文，对方读英文。</span>
+      </button>
+      <button class="choice" data-test="start-both" data-dir="both" type="button">
+        <span class="choice-lang"><span>EN</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 7h12M13 4l3 3-3 3M16 13H4M7 10l-3 3 3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span lang="zh-CN">中文</span></span>
+        <span class="choice-title">Both ways</span>
+        <span class="choice-sub">Take turns. Hold the button for whoever is speaking.</span>
+      </button>
+    </div>
+    <ol class="steps">
+      <li>Start a room. This device becomes the microphone.</li>
+      <li>The other person scans the QR or types the code on their phone.</li>
+      <li>Hold the talk button and speak. They read the translation and can reply from their phone.</li>
+    </ol>
+    <p class="err" data-test="start-error" role="alert"></p>
+    <p class="muted small" style="margin-top:1rem">Speech recognition needs Chrome, Edge or Safari. You can also type instead of speaking.</p>
+  </section>
+  <section class="joinlink">
+    <p>Did someone give you a code? <a href="/join">Join their room</a> and read along.</p>
+  </section>
+</main>
+<footer class="foot">
+  <p>Translation by <b data-test="provider">...</b>.</p>
+  <p>Privacy: Chrome and Edge send the speaker's audio to Google or Microsoft for speech recognition, and Safari may send it to Apple; this server never receives audio. The recognized text, and every reply the guest types or speaks, is sent to this server and to the translation provider named above, and stored the same way. Anyone with the room code can read along. Only the device that started the room can download the transcript. Rooms are kept in memory only and are deleted after 12 hours idle or when the server restarts. Download your transcript before you leave.</p>
+</footer>
+<script type="module" src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+ "results": [
+  {
+   "n": "A1",
+   "function": "AFTER FIX: host types English with the mic toggle on 中文",
+   "devices": "desktop + iphone15",
+   "did": "Toggled 中文, typed \"Where is the train station?\"",
+   "saw": "host tag EN; guest (Chinese phone) shows 火车站在哪里？ after 3 ms",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/A1-typed-language-after-iphone15.png ; evidence/ux-audit-2026-10-21/A1-typed-language-after-desktop.png"
+  },
+  {
+   "n": "A2",
+   "function": "AFTER FIX: room full, guest replies; host resets guests; guest retries",
+   "devices": "pixel7 + desktop",
+   "did": "20 keys taken [201, 429]; guest sent; host Reset guests; guest pressed Enter again",
+   "saw": "message \"这个房间的回复名额已满，没有发出去。你仍然可以阅读。请对方点 \"Reset guests\"。 / Not sent: this room has no free reply slots. You can still read. Ask the speaker to tap \"Reset guests\".\"; after reset reply reached host in 2 ms",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/A2-full-room-after-pixel7.png ; evidence/ux-audit-2026-10-21/A2-full-room-reset-host-desktop.png"
+  },
+  {
+   "n": "A3",
+   "function": "AFTER FIX: \"Join with a code\" header link tap target",
+   "devices": "iphone15",
+   "did": "Measured the link",
+   "saw": "height 44 px",
+   "verdict": "WORKS",
+   "shot": "evidence/ux-audit-2026-10-21/A3-nav-tap-target-after-iphone15.png"
+  }
+ ],
+ "console": [
+  {
+   "page": "guest-full-after",
+   "type": "error",
+   "text": "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+  },
+  {
+   "page": "guest-full-after",
+   "type": "error",
+   "text": "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+  }
+ ]
+}

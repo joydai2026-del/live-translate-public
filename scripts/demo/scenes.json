@@ -1,0 +1,12 @@
+[
+  {"id": "intro", "caption": "", "text": "This is Live Translate, running locally in test mode, with an offline test dictionary standing in for the translator."},
+  {"id": "home", "caption": "1 · Pick a direction", "text": "On the host computer, pick a direction. We'll go both ways, English and Chinese."},
+  {"id": "share", "caption": "2 · Share the code", "text": "The room gets a six character code, and a QR code for the other person."},
+  {"id": "join", "caption": "3 · Join on the phone", "text": "On their phone, they type the code. No app, and no account."},
+  {"id": "speak", "caption": "4 · Speak, they read", "text": "A recording can't use the microphone, so a test hook feeds in the same results speech recognition would. Words show up as you talk, and the Chinese lands on the phone a moment later."},
+  {"id": "zh", "caption": "5 · Chinese back to English", "text": "When your friend answers in Chinese, switch the language, and you read it in English."},
+  {"id": "reply", "caption": "6 · Reply from the phone", "text": "You say thanks, and they can type a reply right on the phone."},
+  {"id": "bigtext", "caption": "7 · Bigger text", "text": "Bigger text is one tap away."},
+  {"id": "transcript", "caption": "8 · Bilingual transcript", "text": "Every final line is saved with its translation and a time stamp. Download it as Markdown, text, or JSON."},
+  {"id": "outro", "caption": "", "text": "Live Translate. Speak here, and they read it there."}
+]

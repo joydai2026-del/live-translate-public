@@ -1,0 +1,2 @@
+# T8 remaining fast failures (planner run at 4:10 PM, load ~90)
+Fix the product so these pass (do not edit checks/): G2 LAN address choice test; m9 no stale failure screenshots in evidence/ (delete stale evidence/fail*.png and make checks' failure screenshots not committed: add evidence/fail*.png to .gitignore). Browser tests 27, 54, 66 failed under very high box load; re-run them when `cut -d. -f1 /proc/loadavg` < 40 and fix only if they still fail. Check: npm test. Do not run slow.sh unless load < 40.

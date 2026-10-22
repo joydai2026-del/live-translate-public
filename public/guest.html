@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f5f3ee">
+<title>Live translation</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body data-page="guest">
+<header class="top">
+  <span class="wordmark"><span class="dot" aria-hidden="true"></span>live translate</span>
+  <span class="muted small"><span lang="zh-CN">房间</span> Room <b class="mono" data-test="guest-code"></b></span>
+</header>
+<main class="wrap guest">
+  <div class="waiting" data-test="waiting">
+    <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+    <h1><span lang="zh-CN">等待对方说话</span> / <span>Waiting for the speaker</span></h1>
+    <p><span lang="zh-CN">请保持此屏幕开启，对方说的话会翻译后显示在这里。想回复时，在下方打字即可。</span> / <span>Keep this screen open. Their words will appear here, translated, as they talk. To reply, type below.</span></p>
+  </div>
+  <div class="reader-row">
+    <button class="tool" type="button" data-test="reader-lang" data-lang="zh" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h9M7.5 3v2M5 5c.6 3.4 3 6 6 7.5M10 5c-.6 3.4-3 6-6 7.5M13 21l4-10 4 10M14.5 17.5h5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="stack"><span lang="zh-CN">大字：中文</span><small>Big text: Chinese</small></span></button>
+  </div>
+  <ol class="segs guest-segs" data-test="segments"></ol>
+</main>
+<div class="guest-bar">
+  <form class="reply" data-test="reply-form" autocomplete="off">
+    <label class="sr-only" for="reply-input"><span lang="zh-CN">回复</span> / Reply</label>
+    <input id="reply-input" data-test="reply-input" maxlength="2000" enterkeyhint="send" placeholder="输入回复 Type a reply" lang="zh-CN">
+    <button class="send" type="submit" aria-label="发送 / Send" title="发送 / Send"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button class="talk" data-test="guest-talk" type="button" aria-pressed="false" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a4 4 0 0 0 4-4V6a4 4 0 0 0-8 0v5a4 4 0 0 0 4 4z" fill="currentColor"/><path d="M6 11a6 6 0 0 0 12 0M12 17v4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span><span lang="zh-CN">按住说话</span><small>Hold to talk</small></span></button>
+  </form>
+  <p class="reply-status" data-test="reply-status" role="status" aria-live="polite"></p>
+  <div class="bar-row">
+    <span class="pill" data-test="status" role="status" aria-live="polite"><span class="stack"><span lang="zh-CN">等待中</span><small lang="en">Waiting</small></span></span>
+    <div class="bar-tools">
+      <button class="tool" type="button" data-test="read-aloud" aria-pressed="false" title="朗读 / Read aloud"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="stack"><span lang="zh-CN">朗读</span><small>Read aloud</small></span></button>
+      <div class="fs" role="group" aria-label="文字大小 / Text size">
+        <button type="button" data-test="font-down" aria-label="缩小文字 / Smaller text" title="缩小文字 / Smaller text">A-</button>
+        <button type="button" data-test="font-up" aria-label="放大文字 / Larger text" title="放大文字 / Larger text">A+</button>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="foot guest-foot">
+  <p><span lang="zh-CN">翻译服务</span> / Translation by <b data-test="provider">...</b>.</p>
+  <details class="privacy">
+    <summary><span lang="zh-CN">隐私</span> Privacy</summary>
+    <p lang="zh-CN">语音识别在说话人的浏览器里进行：Chrome 和 Edge 会把音频发送给 Google 或 Microsoft，Safari 可能发送给 Apple。本服务器从不接收音频。识别出的文字和你的回复会发送到本服务器和上面列出的翻译服务。任何知道房间码的人都可以实时查看。说话人可以下载记录，本页面没有下载功能。房间只保存在内存中，闲置 12 小时或服务器重启后即被删除。</p>
+    <p>Speech recognition runs in the speaker's browser: Chrome and Edge send the audio to Google or Microsoft, and Safari may send it to Apple. This server never receives audio. The recognized text and your replies go to this server and to the translation service named above. Anyone with the room code can read along. The speaker can download the transcript; there is no download on this page. Rooms are kept in memory only and are deleted after 12 hours idle or when the server restarts.</p>
+  </details>
+</footer>
+<script type="module" src="/app.js"></script>
+</body>
+</html>
